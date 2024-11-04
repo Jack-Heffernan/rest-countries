@@ -38,7 +38,6 @@ const CountryDetails = () => {
                         <p className="card-text"><strong>Region:</strong> {country.region}</p>
                         <p className="card-text"><strong>Capital:</strong> {country.capital}</p>
                         <p className="card-text"><strong>Area:</strong> {country.area.toLocaleString()} km²</p>
-                        <p className="card-text"><strong>Demonym:</strong> {country.demonym}</p>
                         <p className="card-text"><strong>Currency:</strong> {Object.values(country.currencies).map(curr => curr.name).join(', ')}</p>
                         <p className="card-text"><strong>Languages:</strong> {Object.values(country.languages).join(', ')}</p>
                         {country.borders && <p className="card-text"><strong>Neighboring Countries:</strong> {country.borders.join(', ')}</p>}

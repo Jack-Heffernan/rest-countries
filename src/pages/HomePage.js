@@ -13,8 +13,10 @@ const HomePage = () => {
 
     return (
         <div>
+            <div className="text-center mb-4">
             <h1>restCountries</h1>
             <SearchBar onSearch={handleSearch} />
+            </div>
             <CountryList searchTerm={searchTerm} />
         </div>
     )

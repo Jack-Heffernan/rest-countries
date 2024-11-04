@@ -23,13 +23,19 @@ const CountryList = ({ searchTerm}) => {
     
     // Create a country card for each country
     return (
-        <div className="country-list">
+        <div className="container my-5">
             <div className="row">
-            {filteredCountries.map((country) => (
-                <div className="col-md-4 col-sm-6 mb-4">
-                <CountryCard key={country.cca3} country={country} />
-                </div>
-            ))}
+                {filteredCountries.length > 0 ? (
+                    filteredCountries.map((country) => (
+                        <div className="col-md-4 col-sm-6 mb-4" key={country.cca3}>
+                            <CountryCard country={country} />
+                        </div>
+                    ))
+                ) : (
+                    <div className="col-12 text-center">
+                        <p className="text-muted">No countries found matching your search.</p>
+                    </div>
+                )}
             </div>
         </div>
     );
