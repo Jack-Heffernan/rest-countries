@@ -10,3 +10,42 @@
 .flag {
   max-height: 100px
 }
+
+body.dark-mode {
+  background-color: #121212; 
+  color: #ffffff; 
+}
+
+.dark-mode .country-list {
+  background-color: #1e1e1e; 
+}
+
+.dark-mode .card {
+  background-color: #2a2a2a; 
+  border: 1px solid #444444;
+  color: #ffffff
+}
+
+/* src/index.css */
+.dark-mode .toggle-button {
+  background-color: #6c757d; /* Grey background for dark mode */
+  color: black; /* White text color */
+  border: none; /* Remove default border */
+}
+
+.light-mode .toggle-button {
+  background-color: #007bff; /* Blue background for light mode */
+  color: white; /* White text color */
+  border: none; /* Remove default border */
+}
+
+.toggle-button {
+  padding: 10px 20px; /* Add padding for a better appearance */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.toggle-button:hover {
+  opacity: 0.8; /* Slightly fade on hover */
+}

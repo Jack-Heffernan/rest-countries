@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllCountries } from '../api/api';
 import CountryCard from './CountryCard';
 
-const CountryList = ({ searchTerm}) => {
+const CountryList = ({ searchTerm, region}) => {
     // initialise state to hold list of all countries
     const [ countries, setCountries ] = useState([]);
 
@@ -16,10 +16,12 @@ const CountryList = ({ searchTerm}) => {
         loadCountries();
     }, []);
 
-        // Filter countries based on searchTerm
-        const filteredCountries = countries.filter(country =>
-            country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
-        );
+        // Filter countries based on searchTerm and Region
+        const filteredCountries = countries.filter(country => {
+            const matchesSearchTerm = country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
+            const matchesRegion = region === 'All' || country.region === region; // Check if region matches or is "All"
+            return matchesSearchTerm && matchesRegion;
+        });
     
     // Create a country card for each country
     return (
