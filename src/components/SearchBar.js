@@ -5,6 +5,8 @@ const SearchBar = ({ onSearch }) => {
         onSearch(event.target.value)
     };
 
+
+
 return (
         <input
         type="text"
