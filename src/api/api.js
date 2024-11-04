@@ -19,7 +19,7 @@ export const getAllCountries = async () => {
 // Get request using instance above for singular country by name parameter
 export const getCountryByName = async (name) => {
     try {
-        const response = await api.get('/name/${name}');
+        const response = await api.get(`/name/${name}`);
         return response.data[0];
     }
     catch (error) {
