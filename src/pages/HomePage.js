@@ -24,7 +24,7 @@ const HomePage = () => {
             <SearchBar onSearch={handleSearch} />
             <Dropdown className="mt-3">
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        {region} {/* Display selected region */}
+                        {region} 
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>

@@ -26,26 +26,44 @@ body.dark-mode {
   color: #ffffff
 }
 
-/* src/index.css */
 .dark-mode .toggle-button {
-  background-color: #6c757d; /* Grey background for dark mode */
-  color: black; /* White text color */
-  border: none; /* Remove default border */
+  background-color: #6c757d; 
+  color: black; 
+  border: none; 
 }
 
 .light-mode .toggle-button {
-  background-color: #007bff; /* Blue background for light mode */
-  color: white; /* White text color */
-  border: none; /* Remove default border */
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
 }
 
 .toggle-button {
-  padding: 10px 20px; /* Add padding for a better appearance */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.6s ease; 
 }
 
 .toggle-button:hover {
-  opacity: 0.8; /* Slightly fade on hover */
+  opacity: 0.8; 
+}
+
+.weather-widget {
+  max-width: 300px;
+  margin-top: 1rem;
+}
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCountryByName } from '../api/api';
+import WeatherWidget from '../components/WeatherWidget';
+import Spinner from 'react-bootstrap/Spinner';
 
 const CountryDetails = () => {
     //Get the country name 
@@ -17,7 +19,9 @@ const CountryDetails = () => {
     }, [name]);
 
     //if no country has been recieved return a loading screen
-    if (!country) return <p>Loading...</p>
+    if (!country) return <Spinner animation="border" role="status">
+    <span className="visually-hidden">Loading...</span>
+    </Spinner>
 
     return (
         <div className="container my-5">
@@ -33,6 +37,8 @@ const CountryDetails = () => {
                         />
                     </div>
                     <div className="col-md-6">
+                        <div className="row">
+                        <div className="col-8">
                         <h2 className="card-title">{country.name.common}</h2>
                         <p className="card-text"><strong>Population:</strong> {country.population.toLocaleString()}</p>
                         <p className="card-text"><strong>Region:</strong> {country.region}</p>
@@ -41,10 +47,16 @@ const CountryDetails = () => {
                         <p className="card-text"><strong>Currency:</strong> {Object.values(country.currencies).map(curr => curr.name).join(', ')}</p>
                         <p className="card-text"><strong>Languages:</strong> {Object.values(country.languages).join(', ')}</p>
                         {country.borders && <p className="card-text"><strong>Neighboring Countries:</strong> {country.borders.join(', ')}</p>}
+                        </div>
+                        <div className="col-4">
+                                <WeatherWidget capital={country.capital[0]} />
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         </div>
         
     )

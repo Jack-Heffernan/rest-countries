@@ -12,6 +12,7 @@ return (
         type="text"
         placeholder="Search"
         onChange={handleSearch}
+        className="search-bar"
         />
     )
 };
