@@ -4,6 +4,8 @@
 
 This React app allows users to learn new information about countries across the globe, powered by data recieved from the RestCountries, OpenWeatherMap and ExchangeRate API's.
 
+Currently hosted at https://rest-countries-jh.web.app/ using Firebase
+
 ## Features
 
 1. **Country Search**: Search for countries by name.
