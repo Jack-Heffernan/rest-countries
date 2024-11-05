@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getCountryByName } from '../api/api';
 import WeatherWidget from '../components/WeatherWidget';
+import ExchangeRateCalculator from '../components/ExchangeWidget';
 import Spinner from 'react-bootstrap/Spinner';
 
 const CountryDetails = () => {
@@ -22,6 +23,9 @@ const CountryDetails = () => {
     if (!country) return <Spinner animation="border" role="status">
     <span className="visually-hidden">Loading...</span>
     </Spinner>
+
+    // Get the main currency code (assuming only one currency per country)
+    const baseCurrency = Object.keys(country.currencies)[0];
 
     return (
         <div className="container my-5">
@@ -47,6 +51,7 @@ const CountryDetails = () => {
                         <p className="card-text"><strong>Currency:</strong> {Object.values(country.currencies).map(curr => curr.name).join(', ')}</p>
                         <p className="card-text"><strong>Languages:</strong> {Object.values(country.languages).join(', ')}</p>
                         {country.borders && <p className="card-text"><strong>Neighboring Countries:</strong> {country.borders.join(', ')}</p>}
+                        <ExchangeRateCalculator baseCurrency={baseCurrency} />
                         </div>
                         <div className="col-4">
                                 <WeatherWidget capital={country.capital[0]} />
