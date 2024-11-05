@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Router>
-      <button onClick={toggleDarkMode} className="toggle-button mt-3">
+      <button onClick={toggleDarkMode} className="toggle-button mt-3 m-1">
                     {DarkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
       <Routes>

@@ -8,7 +8,7 @@ const CountryCard = ({ country }) => {
             <img src={country.flags.png} alt={"flag"} className="flag rounded"/>
             <h3>{country.name.common}</h3>
             <p>Population: {country.population}</p>
-            <Link className=""to={`/country/${country.name.common}`}>View</Link>
+            <Link to={`/country/${country.name.common}`} className="btn btn-primary">View</Link>
         </div>
     );
 };

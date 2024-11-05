@@ -23,7 +23,7 @@ const HomePage = () => {
             <h1>restCountries</h1>
             <SearchBar onSearch={handleSearch} />
             <Dropdown className="mt-3">
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle>
                         {region} 
                     </Dropdown.Toggle>
 
