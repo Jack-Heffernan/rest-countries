@@ -1,6 +1,6 @@
 # RestCountries 
 
-![Project Screenshot](rest-countries.png)
+![Project Screenshot](rest-countries.PNG)
 
 This React app allows users to learn new information about countries across the globe, powered by data recieved from the RestCountries, OpenWeatherMap and ExchangeRate API's.
 
